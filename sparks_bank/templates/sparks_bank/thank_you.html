@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'sparks_bank/base.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/regular.min.js"
+    />
+    <script
+      src="https://kit.fontawesome.com/66aa7c98b3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: rgb(68, 67, 67);
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .tablee {
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-top: 2rem;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid rgb(211, 211, 211);
+      }
+      .navbar {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        color: black;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        display: inline-block;
+      }
+
+      .navbar ul li {
+        float: left;
+        padding: 13px;
+        padding-top: 0px;
+      }
+      .navbar ul a {
+        transform: 0.5s;
+      }
+
+      .navbar ul a:hover {
+        color: rgb(153, 153, 153);
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .user-info {
+        text-align: center;
+      }
+      #home-icon {
+        position: relative;
+        right: 30px;
+        top: 18px;
+      }
+      h1 {
+        margin-left: 55px;
+        margin-top: 65px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbarr">
+        <ul>
+          <li style="list-style: none">
+            <a href="{% url 'home-page' %}" id="home-icon"
+              ><i class="fas fa-home"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <h1>Transaction has been successfully completed!</h1>
+
+    <div class="tablee">
+      <table
+        class="table table-striped table-hover table-dark table-responsive-md"
+      >
+        <thead>
+          <tr class="table-headers">
+            <th scope="col">NAME</th>
+            <th scope="col">ID</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">CURRENT BALANCE</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for customer in customers %}
+          <tr>
+            <td>
+              <a href="{% url 'single-customer' customer.slug %}"
+                >{{ customer.cust_name }}</a
+              >
+            </td>
+            <!--<td><a href="{% url 'review-page' %}">{{ customer.cust_name }}</a></td>-->
+            <td>{{ customer.cust_id }}</td>
+            <td>{{ customer.cust_email }}</td>
+            <td>{{ customer.current_balance }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

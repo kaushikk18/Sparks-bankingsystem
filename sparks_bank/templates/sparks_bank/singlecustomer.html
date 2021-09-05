@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="{% static 'sparks_bank/base.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'sparks_bank/singlecustomerr.css' %}"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/regular.min.js"
+    />
+    <script
+      src="https://kit.fontawesome.com/66aa7c98b3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        color: white;
+        background-color: rgb(68, 67, 67);
+      }
+
+      header {
+        margin-bottom: 6rem;
+      }
+      .revolver {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        width: 80%;
+        height: 30px;
+        border: 3px solid rgb(73, 72, 72);
+      }
+
+      .amount {
+        display: block;
+        width: 80%;
+        margin-top: 20px;
+        font-size: 16px;
+        color: black;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1.5px solid rgb(73, 72, 72);
+        outline: none;
+        background: transparent;
+      }
+      button {
+        display: block;
+        border: 2px solid rgb(73, 72, 72);
+        width: 80px;
+        height: 30px;
+      }
+      .transact {
+        background-color: rgb(138, 138, 121);
+        color: black;
+      }
+
+      h1 {
+        color: white;
+      }
+      h2 {
+        color: white;
+      }
+
+      .navbar {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        color: black;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        display: inline-block;
+      }
+
+      .navbar ul li {
+        float: left;
+        padding: 13px;
+        padding-top: 0px;
+      }
+      .navbar ul a {
+        transform: 0.5s;
+      }
+
+      .navbar ul a:hover {
+        color: rgb(153, 153, 153);
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .user-info {
+        text-align: center;
+      }
+      #home-icon {
+        position: relative;
+        right: 35px;
+        top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbarr">
+        <ul>
+          <li style="list-style: none">
+            <a href="{% url 'home-page' %}" id="home-icon"
+              ><i class="fas fa-home"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!--prettier-ignore-->
+    <div class="user-info">
+    <p> Account holder : {{name}}</p>
+    <p>Holder id : {{id}}</p>
+    <p>email : {{email}}</p>
+    <p>Available balance : {{balance}}</p>
+   </div>
+    <div class="formdiv">
+      <form action="" method="POST">
+        {% csrf_token %} {{form}}
+
+        <button type="submit" id="button">Send</button>
+      </form>
+    </div>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

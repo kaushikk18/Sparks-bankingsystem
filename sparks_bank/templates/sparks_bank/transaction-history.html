@@ -1,0 +1,129 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="{% static 'sparks_bank/base.css' %}" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/regular.min.js"
+    />
+    <script
+      src="https://kit.fontawesome.com/66aa7c98b3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        color: #202020;
+        background-color: rgb(68, 67, 67);
+      }
+      .tablee {
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-top: 6rem;
+      }
+      .navbarr {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        color: black;
+      }
+
+      .navbarr ul {
+        list-style-type: none;
+        display: inline-block;
+      }
+
+      .navbarr ul li {
+        float: left;
+        padding: 13px;
+        padding-top: 0px;
+      }
+      .navbarr ul a {
+        transform: 0.5s;
+        text-decoration: none;
+        color: white;
+      }
+
+      .navbarr ul a:hover {
+        color: rgb(0, 0, 0);
+      }
+
+      #active {
+        color: rgb(158, 151, 151);
+      }
+      #home-icon {
+        position: relative;
+        right: 545px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbarr">
+        <ul>
+          <li>
+            <a href="{% url 'home-page' %}" id="home-icon"
+              ><i class="fas fa-home"></i
+            ></a>
+          </li>
+          <li><a href="{% url 'about-us' %}">About us</a></li>
+          <li><a href="{% url 'all-customers' %}">All Customers</a></li>
+          <li>
+            <a href="{% url 'transaction-record' %}" id="active"
+              >Transactions</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="tablee">
+      <table
+        class="table table-striped table-hover table-dark table-responsive-md"
+      >
+        <thead>
+          <tr class="table-headers">
+            <th scope="col">TRANSACTOR</th>
+            <th scope="col">REVOLVER</th>
+            <th scope="col">AMOUNT</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for transaction in transactions %}
+          <tr>
+            <td>{{ transaction.transactor }}</td>
+            <td>{{ transaction.revolver }}</td>
+            <td>{{ transaction.amount }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

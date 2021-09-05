@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Sparks Bank</title>
+    <link rel="stylesheet" href="{% static 'sparks_bank/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'sparks_bank/base.css' %}" />
+    <style>
+      body {
+        color: white;
+      }
+      h1 {
+        font-size: 3.5rem;
+      }
+      .title {
+        margin-top: 200px;
+        margin-left: 50px;
+        margin-bottom: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <ul>
+          <li><a href="{% url 'about-us' %}">About us</a></li>
+          <li><a href="{% url 'all-customers' %}">All Customers</a></li>
+          <li><a href="{% url 'transaction-record' %}">Transactions</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="title">
+      <h1>The Sparks Bank</h1>
+      <h2>Tomorrow. Together.</h2>
+    </div>
+  </body>
+</html>

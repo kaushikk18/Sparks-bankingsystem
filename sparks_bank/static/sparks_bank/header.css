@@ -1,0 +1,28 @@
+.navbar {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  color: black;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.navbar ul li {
+  float: left;
+  padding: 13px;
+  padding-top: 0px;
+}
+.navbar ul a {
+  transform: 0.5s;
+}
+
+.navbar ul a:hover {
+  color: rgb(153, 153, 153);
+}

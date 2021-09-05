@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/regular.min.js"
+    />
+    <script
+      src="https://kit.fontawesome.com/66aa7c98b3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+      body {
+        font-family: "Lato", sans-serif;
+        color: white;
+        background-color: rgb(68, 67, 67);
+        margin-left: 4rem;
+        margin-right: 4rem;
+      }
+      h3 {
+        color: #bbbbbb;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+      .navbar {
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        color: black;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        display: inline-block;
+      }
+
+      .navbar ul li {
+        float: left;
+        padding: 13px;
+        padding-top: 0px;
+      }
+      .navbar ul a {
+        transform: 0.5s;
+      }
+
+      .navbar ul a:hover {
+        color: rgb(0, 0, 0);
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      #active {
+        color: rgb(158, 151, 151);
+      }
+      #home-icon {
+        position: relative;
+        right: 545px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <ul>
+          <li>
+            <a href="{% url 'home-page' %}" id="home-icon"
+              ><i class="fas fa-home"></i
+            ></a>
+          </li>
+          <li><a href="{% url 'about-us' %}" id="active">About us</a></li>
+          <li><a href="{% url 'all-customers' %}">All Customers</a></li>
+          <li><a href="{% url 'transaction-record' %}">Transactions</a></li>
+        </ul>
+      </div>
+    </header>
+    <h1>The Sparks Bank</h1>
+    <h3>
+      Sparks Bank is a leading private sector bank in India. The Bank’s
+      consolidated total assets stood at Rs. 14.76 trillion at September 30,
+      2020. Sparks Bank currently has a network of 5,288 branches and 15,158
+      ATMs across India.
+    </h3>
+    <br />
+    <h2>Our History</h2>
+    <h3>
+      Sparks was formed in 1955 at the initiative of the World Bank, the
+      Government of India and representatives of Indian industry. The principal
+      objective was to create a development financial institution for providing
+      medium-term and long-term project financing to Indian businesses. Until
+      the late 1980s, Sparks primarily focused its activities on project
+      finance, providing long-term funds to a variety of industrial projects.
+      With the liberalization of the financial sector in India in the 1990s,
+      Sparks transformed its business from a development financial institution
+      offering only project finance to a diversified financial services provider
+      that, along with its subsidiaries and other group companies, offered a
+      wide variety of products and services. As India’s economy became more
+      market-oriented and integrated with the world economy, Sparks capitalized
+      on the new opportunities to provide a wider range of financial products
+      and services to a broader spectrum of clients. Sparks Bank was
+      incorporated in 1994 as a part of the Sparks group. In 1999, Sparks became
+      the first Indian company and the first bank or financial institution from
+      non-Japan Asia to be listed on the New York Stock Exchange.
+    </h3>
+    <br />
+    <h2>Board Members</h2>
+    <h3>
+      <ul>
+        <li>Mr. Girish Chandra Chaturvedi Non-Executive Chairman</li>
+        <li>Mr. Hari L. Mundra Independent Director</li>
+        <li>Mr. S. Madhavan Independent Director</li>
+        <li>Mr. Sandeep Bakhshi, Managing Director & CEO</li>
+        <li>Mr. Sandeep Batra, Executive Director</li>
+      </ul>
+    </h3>
+    <br />
+    <h2>Awards</h2>
+    <h3>
+      <li>
+        The Sparks Bank has been adjudged as the 'Best Private Sector Bank' at
+        the FE Best Banks Awards 2019-2020. The awards are organised by
+        Financial Express, part of the Indian Express group, in association with
+        its knowledge partner EY. Sparks Bank has been recognised as the winner,
+        on the basis of its scoring on five criteria - strength and soundness,
+        credit quality, profitability, growth and efficiency.
+      </li>
+      <li>
+        Sparks Bank's in-house legal team was adjudged the winner in the
+        'Digital Solutions' category at the FT Innovative Lawyers 2021 Awards.
+        The Sparks was recognised as part of the list of most innovative
+        in-house legal teams in Asia Pacific, prepared by Financial Times, an
+        international business newspaper.
+      </li>
+      <li>
+        Sparks Bank won multiple accolades at Business Today-KPMG Best Bank
+        Awards. The Bank was adjudged the winner in the 'Bank of the Year'
+        category. This is the biggest honour in the Annual Awards programme of
+        Business Today. We also won awards in the ‘Best in Talent & Workforce
+        Management’ and ‘Best in Fintech Engagement’ categories.
+      </li>
+      <li>
+        Sparks Bank won five awards at the Indian Banks' Association (IBA)
+        Banking Technology Awards 2021. The Bank was declared winner in three
+        categories namely, 'Best use of IT & Data Analytics', 'Best Payments
+        Initiative' and 'Best Fintech Adoption', while it was adjudged
+        runners-up in the 'Best Technology Bank of the Year' and 'Best Digital
+        Financial Inclusion' categories.
+      </li>
+    </h3>
+  </body>
+</html>
