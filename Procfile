@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT inner_banking_system.wsgi:application
+web: waitress-serve --port=$PORT banking_system.wsgi:application
